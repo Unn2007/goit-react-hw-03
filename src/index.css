@@ -3,10 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
- 
-  
- 
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -53,4 +49,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-

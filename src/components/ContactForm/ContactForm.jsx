@@ -2,7 +2,8 @@ import { useId } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
-import  css from './ContactForm.module.css'
+import css from "./ContactForm.module.css";
+import PropTypes from "prop-types";
 
 const FeedbackSchema = Yup.object().shape({
   username: Yup.string()
@@ -15,9 +16,9 @@ const FeedbackSchema = Yup.object().shape({
     .required("Required"),
 });
 
-function ContactForm({updateContctList}) {
+function ContactForm({ updateContactList }) {
   const handleSubmit = (values, actions) => {
-   updateContctList(values.username,values.telNumber);
+    updateContactList(values.username, values.telNumber);
     actions.resetForm();
   };
   const usernameFieldId = useId();
@@ -30,19 +31,26 @@ function ContactForm({updateContctList}) {
     >
       <Form className={css.form}>
         <div className={css.fieldContainer}>
-        <label htmlFor={usernameFieldId}>Name</label>
-        <Field type="text" name="username" id={usernameFieldId} />
-        <ErrorMessage name="username" component="span" className={css.error} />
+          <label htmlFor={usernameFieldId}>Name</label>
+          <Field type="text" name="username" id={usernameFieldId} />
+          <ErrorMessage
+            name="username"
+            component="span"
+            className={css.error}
+          />
         </div>
-        <div className={css.fieldContainer}> 
-        <label htmlFor={telNumberFieldId}>Number</label>
-        <Field type="tel" name="telNumber" id={telNumberFieldId} />
-        <ErrorMessage name="telNumber" component="span" className={css.error} />
+        <div className={css.fieldContainer}>
+          <label htmlFor={telNumberFieldId}>Number</label>
+          <Field type="tel" name="telNumber" id={telNumberFieldId} />
+          <ErrorMessage
+            name="telNumber"
+            component="span"
+            className={css.error}
+          />
         </div>
 
         <div className={css.buttonContainer}>
-
-        <button type="submit">Add contact</button>
+          <button type="submit">Add contact</button>
         </div>
       </Form>
     </Formik>
@@ -50,3 +58,7 @@ function ContactForm({updateContctList}) {
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  updateContactList: PropTypes.func.isRequired,
+};

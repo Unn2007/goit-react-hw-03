@@ -1,29 +1,25 @@
 .form {
   max-width: 300px;
-border: 2px solid black;
-border-radius: 8px;
-padding: 20px 20px;
-margin-bottom: 25px;
- 
-
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 20px 20px;
+  margin-bottom: 25px;
 }
 .fieldContainer {
-    
-    display: flex;
-    flex-direction: column;
-    column-gap: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  margin-bottom: 15px;
 }
 
 .buttonContainer {
-    display: flex;
-   
+  display: flex;
 }
 
 .buttonContainer button {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .error {
-    font-weight: 700;
-    color: red;
+  font-weight: 700;
+  color: red;
 }
