@@ -1,7 +1,9 @@
+import css from './SearchBox.module.css'
+
 function SearchBox({ searchFieldValue, updateSearch }) {
  
   return (
-    <div>
+    <div className={css.search}>
       <label htmlFor="search">Find contacts by name</label>
 
       <input

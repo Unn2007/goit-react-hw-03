@@ -2,7 +2,7 @@ import { useId } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
-import  css from ''
+import  css from './ContactForm.module.css'
 
 const FeedbackSchema = Yup.object().shape({
   username: Yup.string()
@@ -28,19 +28,22 @@ function ContactForm({updateContctList}) {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form>
-        <div>
+      <Form className={css.form}>
+        <div className={css.fieldContainer}>
         <label htmlFor={usernameFieldId}>Name</label>
         <Field type="text" name="username" id={usernameFieldId} />
-        <ErrorMessage name="username" component="span" />
+        <ErrorMessage name="username" component="span" className={css.error} />
         </div>
-        <div>
+        <div className={css.fieldContainer}> 
         <label htmlFor={telNumberFieldId}>Number</label>
         <Field type="tel" name="telNumber" id={telNumberFieldId} />
-        <ErrorMessage name="telNumber" component="span" />
+        <ErrorMessage name="telNumber" component="span" className={css.error} />
         </div>
 
+        <div className={css.buttonContainer}>
+
         <button type="submit">Add contact</button>
+        </div>
       </Form>
     </Formik>
   );

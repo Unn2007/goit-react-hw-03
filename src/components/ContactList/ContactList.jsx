@@ -1,3 +1,4 @@
+import css from './ContactList.module.css'
 import Contact from '../Contact/Contact'
 
 function ContactList({dataList,onDelete}) {
@@ -7,7 +8,7 @@ function ContactList({dataList,onDelete}) {
         )})
     return (
         
-        <ul>{contactItems}</ul>
+        <ul className={css.contactList}>{contactItems}</ul>
         
     )
 }
